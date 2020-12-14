@@ -27,7 +27,7 @@ class volumeBullsBears {
 
 module.exports = {
     name: "volumeBullsBears",
-    description: "Bulls & Bears",
+    description: "Bulls vs Bears",
     calculator: volumeBullsBears,
     tags: [predef.tags.Volumes],
     inputType: meta.InputType.BARS,
@@ -36,16 +36,10 @@ module.exports = {
         bears: 'volume',
         bulls: 'bulls',
     },
-    plotter : [
-        {
-            type: 'histogram',
-            fields: ['bears']
-        },
-        {
-            type: 'histogram',
-            fields: ['bulls']
-        },
-    ],
+    plotter: {
+        type:'histogram',
+        fields: ['bears','bulls']
+    },
     schemeStyles: {
         dark: {
             bears: {color: "#F23051"},
