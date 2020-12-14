@@ -8,8 +8,13 @@ Description:
 const predef = require("./tools/predef");
 const meta = require("./tools/meta");
 const p = require("./tools/plotting");
+const SMA = require("./tools/SMA");
 
 class volumeBullsBears {
+    init() {
+        this.smaAlgo = SMA(this.props.volAvgPeriod);
+    }
+    
     map(d) {
         const volume = d.volume();
         const close = d.close();
@@ -24,6 +29,7 @@ class volumeBullsBears {
             volume: volume,
             bears: bears,
             bulls: bulls,
+            average: this.smaAlgo(volume)
         };
     }
 }
@@ -68,15 +74,24 @@ module.exports = {
     tags: [predef.tags.Volumes],
     inputType: meta.InputType.BARS,
     areaChoice: meta.AreaChoice.NEW,
+    params: {
+        volAvgPeriod: predef.paramSpecs.period(50),
+    },
     plots : {
         bears: 'bears',
         bulls: 'bulls',
+        average: {title:'VolAvg'},
+        
     },
-    plotter: predef.plotters.custom(dualHistoPlotter),
+    plotter: [
+        predef.plotters.custom(dualHistoPlotter),
+        predef.plotters.singleline("average")
+    ],
     schemeStyles: {
         dark: {
             bears: {color: "#F23051"},
-            bulls: {color: "#3EB242"}
+            bulls: {color: "#3EB242"},
+            average: {color: "yellow"},
         }
     },
     scaler: predef.scalers.multiPath(["volume"])
