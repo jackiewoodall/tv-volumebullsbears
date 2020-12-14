@@ -1,7 +1,7 @@
 /*
 
 Description:
-xxx
+    A Tradovate custom volume indicator which attempts to infer the amount of buying and selling pressure within a candle. For a given time slice of an asset, the amount of buying (or bullish) pressure is rendered in green while the amount of selling (or bearish) pressure is rendered in red. The full height of the histogram represents total volume.
 
 */
 
