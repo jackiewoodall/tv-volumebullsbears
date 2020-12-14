@@ -1,6 +1,6 @@
 # VolumeBullsBears
 
-<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/87215923-e479d100-c375-11ea-97c0-3e5daa3d4c7b.png">
+<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102059028-f98bdd80-3db5-11eb-87e1-629a7f66e074.png">
 
 A [Tradovate](https://www.tradovate.com) custom volume indicator which attempts to infer the amount of buying and selling pressure within a candle. For a given time slice of an asset, the amount of buying (or bullish) pressure is rendered in green while the amount of selling (or bearish) pressure is rendered in red. The full height of the histogram represents total volume.
 
