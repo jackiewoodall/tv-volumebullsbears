@@ -21,6 +21,7 @@ class volumeBullsBears {
         const bears = Math.round(volume * (high - close) / range);
 
         return {
+            volume: volume,
             bears: bears,
             bulls: bulls,
         };
@@ -42,7 +43,7 @@ function dualHistoPlotter(canvas, indicatorInstance, history) {
                     p.offset(x, bulls),
                     {
                         color: "#3EB242",
-                        relativeWidth: 0.6,
+                        relativeWidth: 0.5,
                         opacity: 1.0
                     });
             }
@@ -52,7 +53,7 @@ function dualHistoPlotter(canvas, indicatorInstance, history) {
                     p.offset(x, bulls + bears),
                     {
                         color: "#F23051",
-                        relativeWidth: 0.6,
+                        relativeWidth: 0.5,
                         opacity: 1.0
                     });
             }
@@ -77,5 +78,6 @@ module.exports = {
             bears: {color: "#F23051"},
             bulls: {color: "#3EB242"}
         }
-    }
+    },
+    scaler: predef.scalers.multiPath(["volume"])
 };
