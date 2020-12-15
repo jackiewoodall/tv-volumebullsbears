@@ -1,9 +1,11 @@
-/*
+// VolumeBullsBears v0.9 2020-12-14 JackieW
 
-Description:
-    A Tradovate custom volume indicator which attempts to infer the amount of buying and selling pressure within a candle. For a given time slice of an asset, the amount of buying (or bullish) pressure is rendered in green while the amount of selling (or bearish) pressure is rendered in red. The full height of the histogram represents total volume.
-
-*/
+// Description:
+//      A Tradovate custom volume indicator which attempts to infer the amount of buying 
+//      and selling pressure within a candle. For a given time slice of an asset, the amount 
+//      of buying (or bullish) pressure is rendered in green while the amount of selling (or 
+//      bearish) pressure is rendered in red. The full height of the histogram represents 
+//      total volume. An simple moving average volume line is also plotted in yellow.
 
 const predef = require("./tools/predef");
 const meta = require("./tools/meta");
@@ -29,7 +31,7 @@ class volumeBullsBears {
             volume: volume,
             bears: bears,
             bulls: bulls,
-            average: this.smaAlgo(volume)
+            volAvg: this.smaAlgo(volume)
         };
     }
 }
@@ -80,19 +82,19 @@ module.exports = {
     plots : {
         bears: 'bears',
         bulls: 'bulls',
-        average: {title:'VolAvg'},
+        volAvg: {title:'VolAvg'},
         
     },
     plotter: [
         predef.plotters.custom(dualHistoPlotter),
-        predef.plotters.singleline("average")
+        predef.plotters.singleline("volAvg")
     ],
     schemeStyles: {
         dark: {
             bears: {color: "#F23051"},
             bulls: {color: "#3EB242"},
-            average: {color: "yellow"},
+            volAvg: {color: "yellow"},
         }
     },
-    scaler: predef.scalers.multiPath(["volume"])
+    scaler: predef.scalers.multiPath(["volume","volAvg"])
 };
