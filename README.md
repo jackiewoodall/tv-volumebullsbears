@@ -17,21 +17,21 @@ Find and select the indicator from Tradovate's library of "Community Indicators"
 1. On a chart, select "Indicators".
 1. Select "Explore Community Indicators".
 
-<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102236788-879cbc80-3eb9-11eb-9bf1-f1771363a77a.png">
+<img width="25%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102236788-879cbc80-3eb9-11eb-9bf1-f1771363a77a.png">
 
 3. From the "Community Indicators" dialoge box, search for "VolumeBullsBears" and then click "Install".
 
-<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/194400/49571717-f392d480-f931-11e8-96f2-a8d10cfe375e.png">
+<img width="25%" alt="sample shot" src="https://user-images.githubusercontent.com/194400/49571717-f392d480-f931-11e8-96f2-a8d10cfe375e.png">
 
 You will be presented with a message box on where to find the indicator.
 
 4. Find the "Bulls vs Bears" indicator from your library and select it to add it to a chart.
 
-<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102243900-51633b00-3ec1-11eb-89cc-8dc56df6f6cc.png">
+<img width="20%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102243900-51633b00-3ec1-11eb-89cc-8dc56df6f6cc.png">
 
 ...
 
-<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102243937-5b853980-3ec1-11eb-805e-e70671524770.png">
+<img width="20%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102243937-5b853980-3ec1-11eb-805e-e70671524770.png">
 
 You will then be presented with its Settings dialog.
 
