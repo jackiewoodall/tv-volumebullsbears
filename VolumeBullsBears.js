@@ -12,6 +12,11 @@ const meta = require("./tools/meta");
 const p = require("./tools/plotting");
 const SMA = require("./tools/SMA");
 
+const defaultBearColor      = "#F23051";
+const defaultBullColor      = "#3EB242";
+const defaultVolAvgColor    = "yellow";
+const defaultVolAvgPeriod   = 20;
+
 class volumeBullsBears {
     init() {
         this.smaAlgo = SMA(this.props.volAvgPeriod);
@@ -48,9 +53,9 @@ function dualHistoPlotter(canvas, indicatorInstance, history) {
             if (bulls > 0) {
                 canvas.drawLine(
                     p.offset(x, 0),
-                    p.offset(x, bulls),
+                    p.offset(x, bulls - 1),
                     {
-                        color: "#3EB242",
+                        color: defaultBullColor,
                         relativeWidth: 0.5,
                         opacity: 1.0
                     });
@@ -58,9 +63,9 @@ function dualHistoPlotter(canvas, indicatorInstance, history) {
             if (bears > 0) {
                 canvas.drawLine(
                     p.offset(x, bulls),
-                    p.offset(x, bulls + bears),
+                    p.offset(x, bulls + bears - 1),
                     {
-                        color: "#F23051",
+                        color: defaultBearColor,
                         relativeWidth: 0.5,
                         opacity: 1.0
                     });
@@ -77,7 +82,7 @@ module.exports = {
     inputType: meta.InputType.BARS,
     areaChoice: meta.AreaChoice.NEW,
     params: {
-        volAvgPeriod: predef.paramSpecs.period(50),
+        volAvgPeriod: predef.paramSpecs.period(defaultVolAvgPeriod),
     },
     plots : {
         bears: 'bears',
@@ -91,9 +96,9 @@ module.exports = {
     ],
     schemeStyles: {
         dark: {
-            bears: {color: "#F23051"},
-            bulls: {color: "#3EB242"},
-            volAvg: {color: "yellow"},
+            bears: {color: defaultBearColor},
+            bulls: {color: defaultBullColor},
+            volAvg: {color: defaultVolAvgColor},
         }
     },
     scaler: predef.scalers.multiPath(["volume","volAvg"])
