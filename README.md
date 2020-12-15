@@ -1,12 +1,47 @@
 # VolumeBullsBears
 
-<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102059028-f98bdd80-3db5-11eb-87e1-629a7f66e074.png">
+<img width="70%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102228697-9d59b400-3eb0-11eb-9e85-b819787369d0.png">
 
-A [Tradovate](https://www.tradovate.com) custom volume indicator which attempts to infer the amount of buying and selling pressure within a candle. For a given time slice of an asset, the amount of buying (or bullish) pressure is rendered in green while the amount of selling (or bearish) pressure is rendered in red. The full height of the histogram represents total volume.
+A [Tradovate](https://www.tradovate.com) custom volume indicator which attempts to infer the amount of buying and selling pressure within a candle. For a given time slice of an asset, the amount of buying (or bullish) pressure is rendered in green while the amount of selling (or bearish) pressure is rendered in red. The full height of the histogram represents total volume. A simple moving average of volume is also plotted in yellow.
+
+Buying and selling pressure is calculated based upon the candle's closing price relative to the full range of the candle (high - low).
 
 # Installation & Setup
 
-_TBA_
+These are the steps for finding, installing, and configuring the indicator.
+
+## Install
+
+Find and select the indicator from Tradovate's library of "Community Indicators".
+
+1. On a chart, select "Indicators".
+1. Select "Explore Community Indicators".
+
+<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102236788-879cbc80-3eb9-11eb-9bf1-f1771363a77a.png">
+
+3. From the "Community Indicators" dialoge box, search for "VolumeBullsBears" and then click "Install".
+
+<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/194400/49571717-f392d480-f931-11e8-96f2-a8d10cfe375e.png">
+
+You will be presented with a message box on where to find the indicator.
+
+4. Find the "Bulls vs Bears" indicator from your library and select it to add it to a chart.
+
+<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102243900-51633b00-3ec1-11eb-89cc-8dc56df6f6cc.png">
+
+...
+
+<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102243937-5b853980-3ec1-11eb-805e-e70671524770.png">
+
+You will then be presented with its Settings dialog.
+
+## Settings
+
+<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102231340-7badfc00-3eb3-11eb-9b40-1b3c40594455.png">
+
+Adjusting the line styles for the _**BEARS**_ and _**BULLS**_ plots have no effect.
+
+_**VOL AVG PERIOD**_: sets the range used for calculating the volume's simple moving average.
 
 # Details
 
