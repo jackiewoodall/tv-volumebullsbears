@@ -1,4 +1,4 @@
-// VolumeBullsBears v0.9 2020-12-14 JackieW
+// VolumeBullsBears v1.0 2020-12-15 JackieW
 
 // Description:
 //      A Tradovate custom volume indicator which attempts to infer the amount of buying 

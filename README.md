@@ -21,7 +21,7 @@ Find and select the indicator from Tradovate's library of "Community Indicators"
 
 3. From the "Community Indicators" dialoge box, search for "VolumeBullsBears" and then click "Install".
 
-<img width="25%" alt="sample shot" src="https://user-images.githubusercontent.com/194400/49571717-f392d480-f931-11e8-96f2-a8d10cfe375e.png">
+<img width="50%" alt="sample shot" src="https://user-images.githubusercontent.com/3299770/102302073-daa85b00-3f1d-11eb-9e7c-93fda7ad221c.png">
 
 You will be presented with a message box on where to find the indicator.
 
