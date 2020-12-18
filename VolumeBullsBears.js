@@ -1,4 +1,4 @@
-// VolumeBullsBears v1.0 2020-12-15 JackieW
+// VolumeBullsBears v1.1 2020-12-17 JackieW
 
 // Description:
 //      A Tradovate custom volume indicator which attempts to infer the amount of buying 
@@ -101,5 +101,5 @@ module.exports = {
             volAvg: {color: defaultVolAvgColor},
         }
     },
-    scaler: predef.scalers.multiPath(["volume","volAvg"])
+    scaler: predef.scalers.multiPath(["volume"])
 };
