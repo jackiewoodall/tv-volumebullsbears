@@ -16,6 +16,7 @@ const defaultBearColor      = "#F23051";
 const defaultBullColor      = "#3EB242";
 const defaultVolAvgColor    = "yellow";
 const defaultVolAvgPeriod   = 20;
+const defaultLineWidthPx    = 3;
 
 class volumeBullsBears {
     init() {
@@ -56,7 +57,7 @@ function dualHistoPlotter(canvas, indicatorInstance, history) {
                     p.offset(x, bulls - 1),
                     {
                         color: defaultBullColor,
-                        relativeWidth: 0.5,
+                        width: defaultLineWidthPx,
                         opacity: 1.0
                     });
             }
@@ -66,7 +67,7 @@ function dualHistoPlotter(canvas, indicatorInstance, history) {
                     p.offset(x, bulls + bears - 1),
                     {
                         color: defaultBearColor,
-                        relativeWidth: 0.5,
+                        width: defaultLineWidthPx,
                         opacity: 1.0
                     });
             }
