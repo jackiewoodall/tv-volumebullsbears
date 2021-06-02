@@ -1,4 +1,4 @@
-// VolumeBullsBears v1.2 2021-03-28 JackieW
+// VolumeBullsBears v1.3 2021-06-01 JackieW
 
 // Description:
 //      A Tradovate custom volume indicator which attempts to infer the amount of buying 
@@ -33,45 +33,16 @@ class volumeBullsBears {
         const bulls = Math.round(volume * (close - low) / range);
         const bears = Math.round(volume * (high - close) / range);
 
+        // use bid/offer volumes
+        //const bulls = d.offerVolume();
+        //const bears = d.bidVolume();
+
         return {
             volume: volume,
             bears: bears,
             bulls: bulls,
             volAvg: this.smaAlgo(volume)
         };
-    }
-}
-
-function dualHistoPlotter(canvas, indicatorInstance, history) {
-    for(let i=0; i<history.data.length; ++i) {
-        const item = history.get(i);
-        const bears = item.bears;
-        const bulls = item.bulls;
-        
-        if (bears !== undefined && bulls !== undefined) {
-            const x = p.x.get(item);
-            
-            if (bulls > 0) {
-                canvas.drawLine(
-                    p.offset(x, 0),
-                    p.offset(x, bulls - 1),
-                    {
-                        color: defaultBullColor,
-                        width: defaultLineWidthPx,
-                        opacity: 1.0
-                    });
-            }
-            if (bears > 0) {
-                canvas.drawLine(
-                    p.offset(x, bulls),
-                    p.offset(x, bulls + bears - 1),
-                    {
-                        color: defaultBearColor,
-                        width: defaultLineWidthPx,
-                        opacity: 1.0
-                    });
-            }
-        }
     }
 }
 
@@ -86,21 +57,25 @@ module.exports = {
         volAvgPeriod: predef.paramSpecs.period(defaultVolAvgPeriod),
     },
     plots : {
+        volume: {displayOnly:true},
         bears: 'bears',
         bulls: 'bulls',
         volAvg: {title:'VolAvg'},
         
     },
     plotter: [
-        predef.plotters.custom(dualHistoPlotter),
+        {
+            type:'histogram',
+            fields: ['volume', 'bears','bulls']
+        },
         predef.plotters.singleline("volAvg")
     ],
     schemeStyles: {
         dark: {
+            volume: {color: defaultBearColor},
             bears: {color: defaultBearColor},
             bulls: {color: defaultBullColor},
             volAvg: {color: defaultVolAvgColor},
         }
     },
-    scaler: predef.scalers.multiPath(["volume"])
 };
