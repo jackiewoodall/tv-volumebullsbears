@@ -12,6 +12,14 @@ These are the steps for finding, installing, and configuring the indicator.
 
 ## Install
 
+### TLDR
+
+Click on this link: https://trader.tradovate.com/?shareable=50c636ef-48f2-4995-8a50-65d8c6b87603
+
+To install and then skip to step 4 below.
+
+### Longform
+
 Find and select the indicator from Tradovate's library of "Community Indicators".
 
 1. On a chart, select "Indicators".
